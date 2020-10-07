@@ -1,9 +1,14 @@
 name: python-boilerplate
+region: ams
 services:
 - environment_slug: python
   github:
     branch: main
     deploy_on_push: true
     repo: gzog/python-do-app-boilerplate
+  instance_count: 1
+  instance_size_slug: basic-xxs
   name: python-boilerplate
+  routes:
+  - path: /
   run_command: python web.py
