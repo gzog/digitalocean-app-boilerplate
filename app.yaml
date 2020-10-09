@@ -20,14 +20,32 @@ services:
     deploy_on_push: true
     repo: gzog/python-do-app-boilerplate
   health_check:
-    http_path: /
+    http_path: /service
   http_port: 80
   instance_count: 1
   instance_size_slug: basic-xxs
   name: service
   routes:
-  - path: /
+  - path: /service
   run_command: python web.py
+static_sites:
+- environment_slug: html
+  envs:
+  - key: ENV_VARIABLE
+    scope: BUILD_TIME
+    value: VALUE
+  - key: DATABASE_URL
+    scope: BUILD_TIME
+    value: ${db.DATABASE_URL}
+  error_document: 404.html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: gzog/python-do-app-boilerplate
+  index_document: index.html
+  name: static
+  routes:
+  - path: /
 workers:
 - environment_slug: python
   envs:
