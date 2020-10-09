@@ -1,6 +1,7 @@
+# https://www.digitalocean.com/docs/app-platform/references/app-specification-reference/
 name: python-boilerplate
 region: ams
-services:
+workers:
 - environment_slug: python
   github:
     branch: main
@@ -11,4 +12,4 @@ services:
   name: python-boilerplate
   routes:
   - path: /
-  run_command: python web.py
+  run_command: python worker.py
