@@ -19,3 +19,4 @@ The boilerplate app contains:
 https://www.digitalocean.com/docs/app-platform/references/app-specification-reference/
 
 ## Example
+![image](https://user-images.githubusercontent.com/1487006/95585697-3ea73280-0a48-11eb-975b-129f4b2a1e77.png)
