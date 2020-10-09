@@ -5,10 +5,9 @@ Boilerplate for running Python applications using [DigitalOcean App platform](ht
 
 The boilerplate app contains:
 - 1 service
-- 1 staticsite
+- 1 static site
 - 1 worker
-- 1 database
-
+- 1 dev database
 
 ## Commands
 1. Install [doctl](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/)
@@ -18,3 +17,5 @@ The boilerplate app contains:
 
 ## App Specification Reference
 https://www.digitalocean.com/docs/app-platform/references/app-specification-reference/
+
+## Example

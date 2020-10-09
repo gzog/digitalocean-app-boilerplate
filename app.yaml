@@ -1,42 +1,47 @@
+databases:
+- engine: PG
+  name: db
+  num_nodes: 1
+  size: db-s-dev-database
+  version: "12"
 name: python-boilerplate
 region: ams
 services:
-- name: service
+- environment_slug: python
+  envs:
+  - key: ENV_VARIABLE
+    scope: RUN_AND_BUILD_TIME
+    value: VALUE
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${db.DATABASE_URL}
   github:
     branch: main
     deploy_on_push: true
     repo: gzog/python-do-app-boilerplate
-  run_command: python web.py
-  environment_slug: python
-  envs:
-    - key: ENV_VARIABLE
-      value: VALUE
-      scope: RUN_AND_BUILD_TIME
-      type: GENERAL
-  instance_size_slug: basic-xxs
-  instance_count: 1
-  http_port: 80
-  routes:
-    - path: /
   health_check:
-    initial_delay_seconds: 0
-    period_seconds: 60
-    timeout_seconds: 1
-    success_threshold: 3
-    failure_threshold: 3
     http_path: /
+  http_port: 80
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: service
+  routes:
+  - path: /
+  run_command: python web.py
 workers:
-- name: worker
+- environment_slug: python
+  envs:
+  - key: ENV_VARIABLE
+    scope: RUN_AND_BUILD_TIME
+    value: VALUE
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${db.DATABASE_URL}
   github:
     branch: main
     deploy_on_push: true
     repo: gzog/python-do-app-boilerplate
-  run_command: python worker.py
-  environment_slug: python
-  envs:
-    - key: ENV_VARIABLE
-      value: VALUE
-      scope: RUN_AND_BUILD_TIME
-      type: GENERAL
-  instance_size_slug: basic-xxs
   instance_count: 1
+  instance_size_slug: basic-xxs
+  name: worker
+  run_command: python worker.py
