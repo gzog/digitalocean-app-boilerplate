@@ -18,7 +18,7 @@ services:
   github:
     branch: main
     deploy_on_push: true
-    repo: gzog/python-do-app-boilerplate
+    repo: gzog/digitalocean-app-boilerplate
   health_check:
     http_path: /service
   http_port: 80
@@ -41,7 +41,7 @@ static_sites:
   github:
     branch: main
     deploy_on_push: true
-    repo: gzog/python-do-app-boilerplate
+    repo: gzog/digitalocean-app-boilerplate
   index_document: index.html
   name: static
   routes:
@@ -58,7 +58,7 @@ workers:
   github:
     branch: main
     deploy_on_push: true
-    repo: gzog/python-do-app-boilerplate
+    repo: gzog/digitalocean-app-boilerplate
   instance_count: 1
   instance_size_slug: basic-xxs
   name: worker
