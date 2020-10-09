@@ -4,7 +4,7 @@ databases:
   num_nodes: 1
   size: db-s-dev-database
   version: "12"
-name: python-boilerplate
+name: digitalocean-app-boilerplate
 region: ams
 services:
 - environment_slug: python

@@ -1,12 +1,12 @@
-# python-do-app-boilerplate
+# digitalocean-app-boilerplate
 
 ## Description
-Boilerplate for running Python applications using [DigitalOcean App platform](https://www.digitalocean.com/docs/app-platform/)
+Boilerplate using [DigitalOcean App platform](https://www.digitalocean.com/docs/app-platform/)
 
 The boilerplate app contains:
 - 1 service
-- 1 static site
 - 1 worker
+- 1 static site
 - 1 dev database
 
 ## Commands
