@@ -1,8 +1,10 @@
+import time
 from datetime import datetime
 
 
 def main():
-    print("Datetime:" + datetime.now())
+    print("Datetime: " + str(datetime.now()))
+    time.sleep(60)
 
 
 main()
